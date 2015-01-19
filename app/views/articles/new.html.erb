@@ -1,0 +1,47 @@
+<h2><u>New Post</u></h2>
+<%= form_for :article ,url: articles_path do |f| %>
+ <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>&nbsp;</p>
+<p>&nbsp;</p>
+ <div class="field form-group">
+
+  
+    <%= f.label :title, class: 'col-sm-3 control-label' %>
+    <div class="col-sm-10">
+    <%= f.text_field :title, class: 'form-control' %>
+  </div> 
+</div>
+ <p>&nbsp;</p>
+   <div class="field form-group">
+    <p>&nbsp;</p>
+<p>&nbsp;</p>
+    <%= f.label :text, class: 'col-sm-3 control-label' %>
+    <div class="col-sm-10">
+    <%= f.text_area :text, class: 'form-control' %>
+  </div>
+</div>
+ <br>
+ <p>&nbsp;</p>
+<p>&nbsp;</p>
+   
+    <p>&nbsp;</p>
+<div class="actions form-group">
+    <div class="col-sm-offset-1 col-sm-8">
+
+    
+   <%= f.submit :Submit, class: 'btn btn-success' %>
+  
+<% end %>
+<%= link_to 'Back', articles_path, class: 'btn btn-default' %>

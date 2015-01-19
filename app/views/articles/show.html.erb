@@ -1,0 +1,25 @@
+
+<p>
+<h2><u><strong>Title</strong></u></h2>
+<h4><p><%= @article.title %></p></h4>
+</p>
+
+<p>
+	<h2><u><strong>Text:</strong></u></h2>
+	<h4><p><%= @article.text %></p></h4>
+</p>
+<p>&nbsp</p>
+<p>&nbsp</p>
+
+<u><h4><strong>Comments</strong></h4></u>
+<%= render @article.comments %>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<u><h5><strong>Add a comment:</strong></h5></u>
+<%= render 'comments/form' %>
+ 
+ <p>&nbsp;</p>
+  <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-warning' %> 
+<%= link_to 'Back', articles_path, class: 'btn btn-default' %>		
+<p>&nbsp;</p>
+<p>&nbsp;</p>

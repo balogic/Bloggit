@@ -1,0 +1,33 @@
+<%= form_for([@article, @article.comments.build]) do |f| %>
+<div class="form-group">
+
+  
+    <%= f.label :person, class: 'col-sm-3 control-label' %>
+    <div class="col-sm-10">
+    <%= f.text_field :person, class: 'form-control' %>
+  </div>
+</div>
+
+ <div class="form-group">
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+    <%= f.label :comment, class: 'col-sm-3 control-label' %>
+
+    <div class="col-sm-10">
+    <%= f.text_area :comment, class: 'form-control' %>
+    </div>
+    </div>
+    <p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="actions form-group">
+    <div class="col-sm-offset-1 col-sm-8">
+      
+        <%= f.submit :Finish, class: 'btn btn-success' %>
+</div>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<% end %>

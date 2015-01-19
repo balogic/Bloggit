@@ -1,0 +1,14 @@
+<p>
+  <strong>Person:</strong>
+  <%= comment.person %>
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.comment %>
+</p>
+<p>
+  <%= link_to 'Delete Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+</p>

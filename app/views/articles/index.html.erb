@@ -1,0 +1,30 @@
+<center><u><h2>All Posts</h2></u>
+  <p>&nbsp;</p>
+<%= link_to new_article_path, class: 'btn btn-success' do %>
+<i class="glyphicon glyphicon-plus"></i> Create <% end %>
+<p>&nbsp;</p>
+<div class="table-responsive">
+<table class="table table-bordered">
+  <tr class="active">
+    <th class="text-center">Title</th>
+    <th class="text-center">Description</th>
+
+  </tr>
+  <% @article.each do |article| %>
+      <td class="text-center"><%= article.title %></td>
+      <td class="text-center"><%= article.text %></td>
+      <td class="text-center"><%= link_to ' Show', article_path(article), class: 'glyphicon glyphicon-eye-open' %></td>
+      <td class="text-center"><%= link_to ' Edit', edit_article_path(article), class: 'glyphicon glyphicon-pencil' %></td>
+      <td class="text-center"><%= link_to ' Delete', article_path(article),
+              method: :delete,
+              data: { confirm: 'Are you sure?' },
+              class: 'btn btn-danger btn-xs',class: 'glyphicon glyphicon-trash' %></td>
+    </tr>
+  </div>
+  <% end %>
+</table></center>
+<%= form_for :article, url: articles_path do |f| %>
+<% end %>
+<p class="btn btn-default" class="container"><%= link_to 'Back', controller: 'welcome' %></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
